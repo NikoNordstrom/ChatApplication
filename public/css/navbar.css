@@ -1,0 +1,52 @@
+nav {
+    width: 100vw;
+    display: block;
+    background-color: #26455f;
+    font-family: "Open Sans";
+    font-size: 1.8em;
+    color: #fff;
+    border-bottom: 1px solid #a9a9a9;
+}
+
+nav ul {
+    width: 60vw;
+    display: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 16px;
+}
+
+#welcome {
+    padding: 6px;
+}
+
+#username {
+    display: inline-block;
+    padding: 10px;
+    user-select: none;
+    -moz-user-select: none;
+}
+
+#username:hover {
+    background-color: #223e55;
+    color: #00ffff;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+    nav {
+        border-bottom: none;
+    }
+    nav ul {
+        width: 100vw;
+    }
+    #welcome {
+        padding-left: 24px;
+    }
+}

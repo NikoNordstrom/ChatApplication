@@ -1,0 +1,19 @@
+{
+  "name": "projekti",
+  "version": "1.0.0",
+  "description": "DOHTUPROJ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Niko Nordström",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
+}
