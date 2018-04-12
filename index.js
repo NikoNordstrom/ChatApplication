@@ -16,11 +16,11 @@ io.on("connection", socket => {
 
     socket.on("chat message", (msg, sender) => {
         const now = new Date(Date.now());
-        console.log(`${now.getHours()}:${now.getMinutes()} ${sender} said: ${msg}`);
+        console.log(`[${now}] ${sender} said: ${msg}`);
         io.emit("chat message", now, sender, msg);
     });
 });
 
-http.listen(app.get("port"), app.get("ip"), () => {
+http.listen(app.get("port"), () => {
     console.log(`Node app is running on port ${app.get("port")}...`);
 });
