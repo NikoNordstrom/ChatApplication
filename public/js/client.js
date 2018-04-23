@@ -1,4 +1,10 @@
-const socket = io();
+const socket = io({
+    transports: ["websocket"]
+});
+
+socket.on("reconnect_attempt", () => {
+    socket.io.opts.transports = ["polling", "websocket"];
+});
 
 if (!localStorage.username) {
     document.querySelector(".popup").style.display = "block";
