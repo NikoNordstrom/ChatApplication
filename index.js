@@ -5,7 +5,13 @@ const http = require("http").Server(app);
 const io = require("socket.io")(http);
 
 const { Pool } = require("pg");
-const config = require("./config.json");
+let config;
+try {
+    config = require("./config.json");
+}
+catch(e) {
+    console.log(`config.json file does not exist. ${e}`);
+}
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL || config.connectionString
