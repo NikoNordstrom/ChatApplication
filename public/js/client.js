@@ -1,3 +1,12 @@
+fetch("/messages").then(response => {
+    response.json().then(messages => {
+        messages.forEach(msg => {
+            const time = new Date(msg[1]).getTime();
+            appendMessageItem(time, msg[2], msg[3]);
+        });
+    });
+});
+
 const socket = io({
     transports: ["websocket"]
 });
