@@ -60,7 +60,7 @@ document.querySelector("#username-form").addEventListener("submit", (event) => {
 document.querySelector("#message-form").addEventListener("submit", (event) => {
     const message = document.querySelector("#message-txt");
     if (localStorage.username) {
-        socket.emit("chat message", message.value, localStorage.username);
+        socket.emit("chat message", localStorage.username, message.value);
     }
     else {
         document.querySelector(".popup").style.display = "block";

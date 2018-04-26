@@ -52,9 +52,12 @@ io.on("connection", socket => {
         console.log(`There are currently ${onlineUsers} ${(onlineUsers == 1) ? "user" : "users"} online.`);
     });
 
-    socket.on("chat message", (msg, sender) => {
+    socket.on("chat message", (sender, msg) => {
         if (!sender) {
             sender = "Anonymous";
+        }
+        if (!msg) {
+            return;
         }
 
         const msgQuery = {
